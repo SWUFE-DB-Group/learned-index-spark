@@ -36,9 +36,6 @@ cd lilis
 
 # Build with Maven
 mvn clean package
-
-# Launch with Spark
-spark-submit --class org.lilis.Main target/lilis-1.0.jar
 ```
 
 ## 🌐 Technical Overview
@@ -51,7 +48,6 @@ LiLIS integrates several spatial indexing methods:
 - **KD-Tree**: Binary tree optimized for point data
 - **Quadtree**: Recursive spatial partitioning
 - **Grid Index**: Uniform grid-based partitioning
-- **Space-Filling Curves**: Maps multi-dimensional space into one dimension
 
 ### Spatial Query Capabilities
 
@@ -112,5 +108,4 @@ LiLIS supports temporal data with exceptional performance improvements:
 |------------|-------------|---------------|-------------|
 | Time Point & Space Point | 110.95 | 15,697.36 | ~141× |
 | Time Range & Space Range | 100.62 | 26,845.77 | ~267× |
-
 
