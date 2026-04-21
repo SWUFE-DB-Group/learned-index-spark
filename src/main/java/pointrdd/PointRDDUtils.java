@@ -2,7 +2,7 @@ package pointrdd;
 
 import datatypes.Point;
 import datatypes.Rectangle;
-import javafx.util.Pair;
+import org.apache.commons.lang3.tuple.Pair;
 
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
@@ -101,6 +101,6 @@ public class PointRDDUtils {
             box = null;
             approximateTotalCount = 0L;
         }
-        return new Pair<>(approximateTotalCount,box);
+        return Pair.of(approximateTotalCount,box);
     }
 }
