@@ -1,0 +1,10 @@
+--------------------------------------smokebuild QPIndexBuild:
+Index build time : 951
+--------------------------------------smokebuild KPIndexBuild:
+Index build time : 377
+--------------------------------------smokebuild RPIndexBuild:
+Index build time : 195
+--------------------------------------smokebuild FPIndexBuild:
+Index build time : 526
+--------------------------------------smokebuild APIndexBuild:
+Index build time : 400
