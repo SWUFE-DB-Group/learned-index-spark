@@ -1,0 +1,10 @@
+--------------------------------------nyc_fullbuild QPIndexBuild:
+Index build time : 46715
+--------------------------------------nyc_fullbuild KPIndexBuild:
+Index build time : 64035
+--------------------------------------nyc_fullbuild RPIndexBuild:
+Index build time : 54387
+--------------------------------------nyc_fullbuild FPIndexBuild:
+Index build time : 110434
+--------------------------------------nyc_fullbuild APIndexBuild:
+Index build time : 67911
