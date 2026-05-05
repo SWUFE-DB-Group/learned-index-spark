@@ -14,6 +14,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class KPIndexBuild {
+    public static void main(String[] args) throws Exception { KPIndexBuild(args); }
+
     public static void KPIndexBuild(String[] args) throws Exception {
 
 
