@@ -1,0 +1,78 @@
+--- Run 1 ---
+--------------------------------------syn_fullbuild QPIndexBuild:
+Index build time : 108390
+--------------------------------------syn_fullbuild KPIndexBuild:
+Index build time : 292881
+--------------------------------------syn_fullbuild RPIndexBuild:
+Index build time : 213472
+--------------------------------------syn_fullbuild FPIndexBuild:
+Index build time : 207409
+--------------------------------------syn_fullbuild APIndexBuild:
+Index build time : 248033
+--- Run 2 ---
+--------------------------------------syn_fullbuild QPIndexBuild:
+Index build time : 168424
+--------------------------------------syn_fullbuild KPIndexBuild:
+Index build time : 263019
+--------------------------------------syn_fullbuild RPIndexBuild:
+Index build time : 233222
+--------------------------------------syn_fullbuild FPIndexBuild:
+Index build time : 225966
+--------------------------------------syn_fullbuild APIndexBuild:
+Index build time : 215387
+--- Run 3 ---
+--------------------------------------syn_fullbuild QPIndexBuild:
+Index build time : 148406
+--------------------------------------syn_fullbuild KPIndexBuild:
+Index build time : 281555
+--------------------------------------syn_fullbuild RPIndexBuild:
+Index build time : 188407
+--------------------------------------syn_fullbuild FPIndexBuild:
+Index build time : 166698
+--------------------------------------syn_fullbuild APIndexBuild:
+Index build time : 177985
+--- Run 4 ---
+--------------------------------------syn_fullbuild QPIndexBuild:
+Index build time : 135626
+--------------------------------------syn_fullbuild KPIndexBuild:
+Index build time : 273510
+--------------------------------------syn_fullbuild RPIndexBuild:
+Index build time : 185617
+--------------------------------------syn_fullbuild FPIndexBuild:
+Index build time : 204270
+--------------------------------------syn_fullbuild APIndexBuild:
+Index build time : 248461
+--- Run 5 ---
+--------------------------------------syn_fullbuild QPIndexBuild:
+Index build time : 179501
+--------------------------------------syn_fullbuild KPIndexBuild:
+Index build time : 218280
+--------------------------------------syn_fullbuild RPIndexBuild:
+Index build time : 209496
+--------------------------------------syn_fullbuild FPIndexBuild:
+Index build time : 201838
+--------------------------------------syn_fullbuild APIndexBuild:
+Index build time : 217835
+--- Run 6 ---
+--------------------------------------syn_fullbuild QPIndexBuild:
+Index build time : 143847
+--------------------------------------syn_fullbuild KPIndexBuild:
+Index build time : 332674
+--------------------------------------syn_fullbuild RPIndexBuild:
+Index build time : 203527
+--------------------------------------syn_fullbuild FPIndexBuild:
+Index build time : 212696
+--------------------------------------syn_fullbuild APIndexBuild:
+Index build time : 202676
+--- Run 7 ---
+--------------------------------------syn_fullbuild QPIndexBuild:
+Index build time : 159117
+--------------------------------------syn_fullbuild KPIndexBuild:
+Index build time : 304399
+--------------------------------------syn_fullbuild RPIndexBuild:
+Index build time : 173042
+--------------------------------------syn_fullbuild FPIndexBuild:
+Index build time : 206068
+--------------------------------------syn_fullbuild APIndexBuild:
+Index build time : 186014
+--- Run 8 SKIPPED (only 1 variants) ---

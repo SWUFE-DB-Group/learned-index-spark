@@ -1,0 +1,2 @@
+--------------------------------------syn_fullbuild QPIndexBuild:
+Index build time : 142344
