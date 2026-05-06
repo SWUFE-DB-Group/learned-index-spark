@@ -78,8 +78,8 @@
   "hotPaths": [
     {
       "path": "pom.xml",
-      "accessCount": 6,
-      "lastAccessed": 1778036287579,
+      "accessCount": 9,
+      "lastAccessed": 1778049097130,
       "type": "file"
     },
     {
@@ -95,21 +95,39 @@
       "type": "file"
     },
     {
-      "path": "src/main/java/utils/ReadPolygon.java",
-      "accessCount": 2,
-      "lastAccessed": 1778033919948,
-      "type": "file"
-    },
-    {
-      "path": "src/test/java/SparkIntegrationTest.java",
-      "accessCount": 2,
-      "lastAccessed": 1778034581667,
+      "path": "src/main/java/main.java",
+      "accessCount": 3,
+      "lastAccessed": 1778048893919,
       "type": "file"
     },
     {
       "path": "src/main/java/utils/HDFSPointReader.java",
-      "accessCount": 2,
-      "lastAccessed": 1778034969721,
+      "accessCount": 3,
+      "lastAccessed": 1778048916287,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/query/DistanceQuery.java",
+      "accessCount": 3,
+      "lastAccessed": 1778048921877,
+      "type": "file"
+    },
+    {
+      "path": "src/test/java/SparkIntegrationTest.java",
+      "accessCount": 3,
+      "lastAccessed": 1778049516571,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/query/JoinQuery.java",
+      "accessCount": 3,
+      "lastAccessed": 1778049682156,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/utils/ReadPolygon.java",
+      "accessCount": 3,
+      "lastAccessed": 1778049689825,
       "type": "file"
     },
     {
@@ -119,39 +137,81 @@
       "type": "file"
     },
     {
-      "path": "src/main/java/query/DistanceQuery.java",
-      "accessCount": 2,
-      "lastAccessed": 1778035247459,
-      "type": "file"
-    },
-    {
       "path": "src/test/java/SystemBenchmark.java",
       "accessCount": 2,
       "lastAccessed": 1778035271163,
       "type": "file"
     },
     {
-      "path": "src/main/java/main.java",
+      "path": "src/main/java/partitions/SpatialPartition.java",
       "accessCount": 2,
-      "lastAccessed": 1778036126720,
+      "lastAccessed": 1778048901011,
       "type": "file"
     },
     {
-      "path": "src/main/java/query/JoinQuery.java",
+      "path": "src/main/java/index/BuildIndex.java",
       "accessCount": 2,
-      "lastAccessed": 1778036774357,
+      "lastAccessed": 1778048901567,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/query/RangeQuery.java",
+      "accessCount": 2,
+      "lastAccessed": 1778048902056,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/spline/Spline.java",
+      "accessCount": 2,
+      "lastAccessed": 1778048902521,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/query/KNNQuery.java",
+      "accessCount": 2,
+      "lastAccessed": 1778048908278,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/query/PointQuery.java",
+      "accessCount": 2,
+      "lastAccessed": 1778048908825,
       "type": "file"
     },
     {
       "path": "src/main/java/datatypes/Point.java",
-      "accessCount": 1,
-      "lastAccessed": 1778032173363,
+      "accessCount": 2,
+      "lastAccessed": 1778048909263,
       "type": "file"
     },
     {
       "path": "src/main/java/datatypes/Rectangle.java",
-      "accessCount": 1,
-      "lastAccessed": 1778032173863,
+      "accessCount": 2,
+      "lastAccessed": 1778048909786,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/partitions/QuadTreePartitioner.java",
+      "accessCount": 2,
+      "lastAccessed": 1778048915626,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/index/IndexBuilder.java",
+      "accessCount": 2,
+      "lastAccessed": 1778048916846,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/utils/Utils.java",
+      "accessCount": 2,
+      "lastAccessed": 1778048922457,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/query/JoinQueryUsingIndex.java",
+      "accessCount": 2,
+      "lastAccessed": 1778049682786,
       "type": "file"
     },
     {
@@ -164,24 +224,6 @@
       "path": "src/main/java/datatypes/Edge.java",
       "accessCount": 1,
       "lastAccessed": 1778032174700,
-      "type": "file"
-    },
-    {
-      "path": "src/main/java/index/BuildIndex.java",
-      "accessCount": 1,
-      "lastAccessed": 1778032180196,
-      "type": "file"
-    },
-    {
-      "path": "src/main/java/index/IndexBuilder.java",
-      "accessCount": 1,
-      "lastAccessed": 1778032180708,
-      "type": "file"
-    },
-    {
-      "path": "src/main/java/spline/Spline.java",
-      "accessCount": 1,
-      "lastAccessed": 1778032181183,
       "type": "file"
     },
     {
@@ -203,12 +245,6 @@
       "type": "file"
     },
     {
-      "path": "src/main/java/partitions/SpatialPartition.java",
-      "accessCount": 1,
-      "lastAccessed": 1778032190444,
-      "type": "file"
-    },
-    {
       "path": "src/main/java/partitions/FixGridPartitioner.java",
       "accessCount": 1,
       "lastAccessed": 1778032191083,
@@ -227,45 +263,15 @@
       "type": "file"
     },
     {
-      "path": "src/main/java/partitions/QuadTreePartitioner.java",
-      "accessCount": 1,
-      "lastAccessed": 1778032192657,
-      "type": "file"
-    },
-    {
       "path": "src/main/java/partitions/RtreePatitioner.java",
       "accessCount": 1,
       "lastAccessed": 1778032193203,
       "type": "file"
     },
     {
-      "path": "src/main/java/query/RangeQuery.java",
-      "accessCount": 1,
-      "lastAccessed": 1778032198480,
-      "type": "file"
-    },
-    {
-      "path": "src/main/java/query/PointQuery.java",
-      "accessCount": 1,
-      "lastAccessed": 1778032198987,
-      "type": "file"
-    },
-    {
-      "path": "src/main/java/query/KNNQuery.java",
-      "accessCount": 1,
-      "lastAccessed": 1778032199761,
-      "type": "file"
-    },
-    {
       "path": "src/main/java/utils/SplineUtil.java",
       "accessCount": 1,
       "lastAccessed": 1778032201037,
-      "type": "file"
-    },
-    {
-      "path": "src/main/java/utils/Utils.java",
-      "accessCount": 1,
-      "lastAccessed": 1778032206213,
       "type": "file"
     },
     {
@@ -314,12 +320,6 @@
       "path": "src/main/java/innerPartition/spatialPartitioner.java",
       "accessCount": 1,
       "lastAccessed": 1778032216322,
-      "type": "file"
-    },
-    {
-      "path": "src/main/java/query/JoinQueryUsingIndex.java",
-      "accessCount": 1,
-      "lastAccessed": 1778032217638,
       "type": "file"
     },
     {

@@ -1,7 +1,7 @@
 {
   "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"export PATH=\\\"/home/haowanjun/apache-maven-3.9.15/bin:$PATH\\\" && CP=$(mvn dependency:build-classpath -q -DincludeScope=compile -Dmdep.outputFile=/dev/stdout 2>/dev/null) && java -ea -cp \\\"...",
-  "error": "Exit code 1\n=== LiLIS Spark Integration Test ===\n\nUsing Spark's default log4j profile: org/apache/spark/log4j-defaults.properties\n26/05/06 10:29:28 WARN Utils: Your hostname, haowanjun-ThinkCentre-M760t resolves to a loopback address: 127.0.1.1; using 10.189.141.159 instead (on interface eno1)\n26/05/06 10:29:28 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address\n26/05/06 10:29:28 INFO SparkContext: Running Spark version 3.0.0\n26/05/06 10:29:28 WARN NativeCodeLoader: Unable to l...",
-  "timestamp": "2026-05-06T02:29:30.207Z",
+  "tool_input_preview": "{\"command\":\"sudo apt-get update -qq && sudo apt-get install -y maven 2>&1 | tail -10\",\"timeout\":120000,\"description\":\"Install Maven via apt\"}",
+  "error": "Exit code 1\nsudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper\nsudo: 需要密码",
+  "timestamp": "2026-05-06T06:33:01.064Z",
   "retry_count": 1
 }

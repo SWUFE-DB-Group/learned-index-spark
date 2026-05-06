@@ -1,5 +1,6 @@
 HDFSPointReaderTest.class
 SplineTest.class
+JoinQueryTest.class
 Test.class
 SystemBenchmark.class
 SparkIntegrationTest.class
