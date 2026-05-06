@@ -1,7 +1,0 @@
-{
-  "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"sudo apt-get update -qq && sudo apt-get install -y maven 2>&1 | tail -10\",\"timeout\":120000,\"description\":\"Install Maven via apt\"}",
-  "error": "Exit code 1\nsudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper\nsudo: 需要密码",
-  "timestamp": "2026-05-06T06:33:01.064Z",
-  "retry_count": 1
-}

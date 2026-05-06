@@ -1,0 +1,12 @@
+# IDE and tool state
+.omc/
+.claude/
+.idea/
+*.iml
+
+# Build output
+target/
+
+# OS files
+.DS_Store
+Thumbs.db
