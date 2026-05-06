@@ -32,10 +32,120 @@ See more at [here](https://swufe-db-group.github.io/learned-index-spark/).
 ```bash
 # Clone 
 git clone git@github.com:SWUFE-DB-Group/learned-index-spark.git
-cd lilis
+cd learned-index-spark
 
-# Build with Maven
-mvn clean package
+# Build uber-jar (includes all dependencies except Spark)
+./deploy/bin/build.sh
+# or manually:
+mvn clean package -DskipTests
+```
+
+Output: `target/LearnIndexSpark-1.0-SNAPSHOT.jar`
+
+## Deployment (Spark Standalone Cluster)
+
+### Cluster Requirements
+
+| Component | Version |
+|-----------|---------|
+| Java | JDK 8 |
+| Spark | 3.0.x (Standalone mode) |
+| Hadoop/HDFS | 2.7+ or 3.x |
+| Scala | 2.12 (bundled with Spark) |
+
+### Step 1: Build
+
+```bash
+./deploy/bin/build.sh
+```
+
+### Step 2: Upload Data to HDFS
+
+```bash
+# Upload CSV file
+./deploy/bin/upload-data.sh /path/to/points.csv
+
+# Or specify HDFS target path
+./deploy/bin/upload-data.sh /path/to/data.csv /user/hadoop/lilis-data
+```
+
+CSV format: first row as header, column 0 = x (longitude), column 1 = y (latitude), comma-separated.
+
+### Step 3: Configure Cluster (Optional)
+
+```bash
+# Copy recommended Spark config
+cp deploy/conf/spark-defaults.conf $SPARK_HOME/conf/
+cp deploy/conf/log4j.properties $SPARK_HOME/conf/
+```
+
+Key parameters (via environment variables):
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `SPARK_MASTER` | `spark://master:7077` | Spark Master URL |
+| `DRIVER_MEMORY` | `4g` | Driver memory |
+| `EXECUTOR_MEMORY` | `8g` | Executor memory |
+| `EXECUTOR_CORES` | `4` | Cores per executor |
+| `NUM_EXECUTORS` | `4` | Number of executors |
+
+### Step 4: Submit Jobs
+
+```bash
+# Run full system benchmark (generated data)
+./deploy/bin/submit-benchmark.sh --generate 100000
+
+# Run full system benchmark (HDFS data)
+./deploy/bin/submit-benchmark.sh hdfs:///lilis/data/points.csv
+
+# Run all partition strategies comparison
+./deploy/bin/submit-all-benchmarks.sh --generate 50000
+
+# Run specific partition benchmark
+./deploy/bin/submit-all-benchmarks.sh --partition QuadTree hdfs:///lilis/data/points.csv
+
+# Run custom main class
+./deploy/bin/submit-query.sh benchmark.RTreeBenchmark --generate 100000
+```
+
+### Available Entry Classes
+
+| Class | Description |
+|-------|-------------|
+| `SystemBenchmark` | Full system benchmark (partition + index + all queries) |
+| `benchmark.BenchmarkRunner` | All partitions comparison with summary table |
+| `benchmark.QuadTreeBenchmark` | QuadTree partition benchmark |
+| `benchmark.KDBTreeBenchmark` | KDB-Tree partition benchmark |
+| `benchmark.RTreeBenchmark` | R-Tree partition benchmark |
+| `benchmark.FixGridBenchmark` | FixGrid partition benchmark |
+| `benchmark.AdaptiveGridBenchmark` | AdaptiveGrid partition benchmark |
+| `idnexbuild.BuildAll` | Build indexes with all partition methods |
+
+### Monitoring
+
+- Spark Web UI: `http://<master-ip>:8080`
+- History Server: `http://<master-ip>:18080`
+- Benchmark results: CSV files in working directory
+
+For detailed deployment documentation, see [`deploy/DEPLOY.md`](deploy/DEPLOY.md).
+
+## Project Structure
+
+```
+learned-index-spark/
+├── src/main/java/
+│   ├── benchmark/          # Benchmark test classes (per-partition)
+│   ├── datatypes/          # Point, Rectangle
+│   ├── index/              # Index building logic
+│   ├── partitions/         # 5 spatial partition strategies
+│   ├── query/              # Range, Point, KNN, Distance, Join queries
+│   ├── spline/             # Spline index (CDF + Radix acceleration)
+│   └── utils/              # HDFSPointReader, utilities
+├── deploy/
+│   ├── bin/                # Build & submit scripts
+│   ├── conf/               # Spark configuration files
+│   └── DEPLOY.md           # Detailed deployment guide
+└── pom.xml
 ```
 
 ## 🌐 Technical Overview
