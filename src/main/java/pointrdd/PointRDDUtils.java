@@ -2,7 +2,7 @@ package pointrdd;
 
 import datatypes.Point;
 import datatypes.Rectangle;
-import javafx.util.Pair;
+import java.util.AbstractMap;
 
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
@@ -78,7 +78,7 @@ public class PointRDDUtils {
 
 
 
-    public static Pair<Long,Rectangle> PointRDDanalyze(JavaRDD<Point>pointRDD){
+    public static AbstractMap.SimpleEntry<Long,Rectangle> PointRDDanalyze(JavaRDD<Point>pointRDD){
         Rectangle box = null;
         long approximateTotalCount;
 
@@ -101,6 +101,6 @@ public class PointRDDUtils {
             box = null;
             approximateTotalCount = 0L;
         }
-        return new Pair<>(approximateTotalCount,box);
+        return new AbstractMap.SimpleEntry<>(approximateTotalCount,box);
     }
 }

@@ -1,0 +1,381 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1778032126241,
+  "projectRoot": "/home/haowanjun/my_project/learned-index-spark",
+  "techStack": {
+    "languages": [
+      {
+        "name": "Java",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "pom.xml"
+        ]
+      }
+    ],
+    "frameworks": [],
+    "packageManager": "maven",
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": null,
+    "testCommand": null,
+    "lintCommand": null,
+    "devCommand": null,
+    "scripts": {}
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "docs",
+      "src"
+    ],
+    "gitBranches": {
+      "defaultBranch": "main",
+      "branchingStrategy": null
+    }
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "docs": {
+      "path": "docs",
+      "purpose": "Documentation",
+      "fileCount": 1,
+      "lastAccessed": 1778032126240,
+      "keyFiles": [
+        "index.html"
+      ]
+    },
+    "src": {
+      "path": "src",
+      "purpose": "Source code",
+      "fileCount": 0,
+      "lastAccessed": 1778032126240,
+      "keyFiles": []
+    },
+    "docs/static": {
+      "path": "docs/static",
+      "purpose": "Static files",
+      "fileCount": 0,
+      "lastAccessed": 1778032126240,
+      "keyFiles": []
+    },
+    "src/test": {
+      "path": "src/test",
+      "purpose": "Test files",
+      "fileCount": 0,
+      "lastAccessed": 1778032126240,
+      "keyFiles": []
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "pom.xml",
+      "accessCount": 6,
+      "lastAccessed": 1778036287579,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/pointrdd/PointRDDUtils.java",
+      "accessCount": 3,
+      "lastAccessed": 1778033912433,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/utils/ReadPolygon.java",
+      "accessCount": 2,
+      "lastAccessed": 1778033919948,
+      "type": "file"
+    },
+    {
+      "path": "src/test/java/SparkIntegrationTest.java",
+      "accessCount": 2,
+      "lastAccessed": 1778034581667,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/utils/HDFSPointReader.java",
+      "accessCount": 2,
+      "lastAccessed": 1778034969721,
+      "type": "file"
+    },
+    {
+      "path": "src/test/java/HDFSPointReaderTest.java",
+      "accessCount": 2,
+      "lastAccessed": 1778034984808,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/query/DistanceQuery.java",
+      "accessCount": 2,
+      "lastAccessed": 1778035247459,
+      "type": "file"
+    },
+    {
+      "path": "src/test/java/SystemBenchmark.java",
+      "accessCount": 2,
+      "lastAccessed": 1778035271163,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/main.java",
+      "accessCount": 2,
+      "lastAccessed": 1778036126720,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/query/JoinQuery.java",
+      "accessCount": 2,
+      "lastAccessed": 1778036774357,
+      "type": "file"
+    },
+    {
+      "path": "README.md",
+      "accessCount": 1,
+      "lastAccessed": 1778032166745,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/datatypes/Point.java",
+      "accessCount": 1,
+      "lastAccessed": 1778032173363,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/datatypes/Rectangle.java",
+      "accessCount": 1,
+      "lastAccessed": 1778032173863,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/datatypes/Circle.java",
+      "accessCount": 1,
+      "lastAccessed": 1778032174247,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/datatypes/Edge.java",
+      "accessCount": 1,
+      "lastAccessed": 1778032174700,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/index/BuildIndex.java",
+      "accessCount": 1,
+      "lastAccessed": 1778032180196,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/index/IndexBuilder.java",
+      "accessCount": 1,
+      "lastAccessed": 1778032180708,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/spline/Spline.java",
+      "accessCount": 1,
+      "lastAccessed": 1778032181183,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/spline/Coord.java",
+      "accessCount": 1,
+      "lastAccessed": 1778032181640,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/spline/Errors.java",
+      "accessCount": 1,
+      "lastAccessed": 1778032182141,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/spline/CdfOnTheFlyInterfaceY.java",
+      "accessCount": 1,
+      "lastAccessed": 1778032183963,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/partitions/SpatialPartition.java",
+      "accessCount": 1,
+      "lastAccessed": 1778032190444,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/partitions/FixGridPartitioner.java",
+      "accessCount": 1,
+      "lastAccessed": 1778032191083,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/partitions/AdaptiveGridPartitioner.java",
+      "accessCount": 1,
+      "lastAccessed": 1778032191537,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/partitions/KDBTreePartitioner.java",
+      "accessCount": 1,
+      "lastAccessed": 1778032192114,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/partitions/QuadTreePartitioner.java",
+      "accessCount": 1,
+      "lastAccessed": 1778032192657,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/partitions/RtreePatitioner.java",
+      "accessCount": 1,
+      "lastAccessed": 1778032193203,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/query/RangeQuery.java",
+      "accessCount": 1,
+      "lastAccessed": 1778032198480,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/query/PointQuery.java",
+      "accessCount": 1,
+      "lastAccessed": 1778032198987,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/query/KNNQuery.java",
+      "accessCount": 1,
+      "lastAccessed": 1778032199761,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/utils/SplineUtil.java",
+      "accessCount": 1,
+      "lastAccessed": 1778032201037,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/utils/Utils.java",
+      "accessCount": 1,
+      "lastAccessed": 1778032206213,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/utils/ReadPoints.java",
+      "accessCount": 1,
+      "lastAccessed": 1778032206731,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/query/RangeFilterUsingIndex.java",
+      "accessCount": 1,
+      "lastAccessed": 1778032207272,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/query/PointsFilterUsingIndex.java",
+      "accessCount": 1,
+      "lastAccessed": 1778032207825,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/query/DistanceFilterUsingIndex.java",
+      "accessCount": 1,
+      "lastAccessed": 1778032208287,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/timeseries/Timeseries.java",
+      "accessCount": 1,
+      "lastAccessed": 1778032208926,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/innerPartition/KDBPartitioner.java",
+      "accessCount": 1,
+      "lastAccessed": 1778032215224,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/innerPartition/QuadPartition.java",
+      "accessCount": 1,
+      "lastAccessed": 1778032215850,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/innerPartition/spatialPartitioner.java",
+      "accessCount": 1,
+      "lastAccessed": 1778032216322,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/query/JoinQueryUsingIndex.java",
+      "accessCount": 1,
+      "lastAccessed": 1778032217638,
+      "type": "file"
+    },
+    {
+      "path": "docs/PROJECT_DOCUMENTATION.md",
+      "accessCount": 1,
+      "lastAccessed": 1778032395546,
+      "type": "file"
+    },
+    {
+      "path": "src/main/java/utils/ReadRectangles.java",
+      "accessCount": 1,
+      "lastAccessed": 1778033892772,
+      "type": "file"
+    },
+    {
+      "path": "src/test/java/Test.java",
+      "accessCount": 1,
+      "lastAccessed": 1778033943452,
+      "type": "file"
+    },
+    {
+      "path": "src/test/java/SplineTest.java",
+      "accessCount": 1,
+      "lastAccessed": 1778033969558,
+      "type": "file"
+    },
+    {
+      "path": "deploy/conf/spark-defaults.conf",
+      "accessCount": 1,
+      "lastAccessed": 1778036299337,
+      "type": "file"
+    },
+    {
+      "path": "deploy/conf/log4j.properties",
+      "accessCount": 1,
+      "lastAccessed": 1778036303699,
+      "type": "file"
+    },
+    {
+      "path": "deploy/bin/submit-benchmark.sh",
+      "accessCount": 1,
+      "lastAccessed": 1778036318528,
+      "type": "file"
+    },
+    {
+      "path": "deploy/bin/submit-query.sh",
+      "accessCount": 1,
+      "lastAccessed": 1778036327909,
+      "type": "file"
+    },
+    {
+      "path": "deploy/bin/upload-data.sh",
+      "accessCount": 1,
+      "lastAccessed": 1778036338883,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}
