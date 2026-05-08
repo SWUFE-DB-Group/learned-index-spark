@@ -5,9 +5,7 @@
 
 ## About
 
-[LiLIS](https://swufe-db-group.github.io/learned-index-spark/) is a distributed learning-based spatial data indexing system. Built on Apache Spark, it combines learned-search techniques with distributed computing to deliver high-performance spatial data indexing and querying, outperforming traditional spatial indexing methods by 2–3 orders of magnitude.
-
-See more at [here](https://swufe-db-group.github.io/learned-index-spark/).
+LiLIS is a distributed learning-based spatial data indexing system. Built on Apache Spark, it combines learned-search techniques with distributed computing to deliver high-performance spatial data indexing and querying, outperforming traditional spatial indexing methods by 2–3 orders of magnitude.
 
 ## 🚀 Key Features
 
