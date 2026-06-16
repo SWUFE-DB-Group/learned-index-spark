@@ -5,7 +5,6 @@ import datatypes.Point;
 import innerPartition.KDBPartitioner;
 import innerPartition.spatialPartitioner;
 import org.apache.sedona.core.spatialPartitioning.KDB;
-import org.apache.sedona.core.spatialPartitioning.KDBTree;
 import org.apache.sedona.core.utils.HalfOpenRectangle;
 import org.apache.sedona.core.utils.RDDSampleUtils;
 import org.apache.spark.api.java.JavaRDD;
@@ -28,7 +27,7 @@ public class KDBTreePartitioner implements Serializable {
     public Envelope boundaryEnvelope = null;
     private int sampleNumber = -1;
     private spatialPartitioner partitioner;
-    private   KDBTree tree;
+    private   KDB tree;
     public KDBTreePartitioner(JavaRDD<Point> rawSpatialRDD) {
         this.rawSpatialRDD = rawSpatialRDD;
     }
@@ -69,7 +68,7 @@ public class KDBTreePartitioner implements Serializable {
         //System.out.println("+++++++++++++++++++++samples = "+samples.get(0));
         Envelope paddedBoundary = new Envelope(this.boundaryEnvelope.getMinX(), this.boundaryEnvelope.getMaxX() + 0.01D, this.boundaryEnvelope.getMinY(), this.boundaryEnvelope.getMaxY() + 0.01D);
 
-        this.tree = new KDBTree(samples.size() / numPartitions, numPartitions, paddedBoundary);
+        this.tree = new KDB(samples.size() / numPartitions, numPartitions, paddedBoundary);
         Iterator var9 = samples.iterator();
 
         while(var9.hasNext()) {
@@ -110,7 +109,7 @@ public class KDBTreePartitioner implements Serializable {
     public  Iterator<Tuple2<Integer, Point>> placeObject(Point point) throws Exception {
         Objects.requireNonNull(point, "spatialObject");
         Envelope envelope = point.getEnvelopeInternal();
-        List<KDBTree> matchedPartitions = this.tree.findLeafNodes(envelope);
+        List<KDB> matchedPartitions = this.tree.findLeafNodes(envelope);
 
         Set<Tuple2<Integer, Point>> result = new HashSet();
         Iterator var6 = matchedPartitions.iterator();

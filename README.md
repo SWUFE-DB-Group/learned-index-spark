@@ -108,6 +108,124 @@ Key parameters (via environment variables):
 ./deploy/bin/submit-query.sh benchmark.RTreeBenchmark --generate 100000
 ```
 
+### Spark SQL Support
+
+LiLIS now provides a Spark SQL integration layer in addition to the original `JavaRDD` API. The SQL layer supports three usage modes:
+
+1. **DataFrame API with index acceleration**: build a LiLIS index from a `Dataset<Row>` and return query results as DataFrames.
+2. **SQL UDFs**: use row-level SQL predicates such as `lilis_in_range(...)` for convenient Spark SQL filtering.
+3. **DataSource V2 indexed views**: query an indexed LiLIS view directly from Spark SQL with range filter pushdown.
+
+#### Register SQL Functions
+
+```java
+SparkSession spark = SparkSession.builder()
+        .appName("LiLIS-SQL")
+        .getOrCreate();
+
+LiLIS.register(spark);
+```
+
+Registered SQL functions:
+
+| Function | Description | Uses LiLIS Index |
+|----------|-------------|------------------|
+| `lilis_in_range(x, y, xmin, ymin, xmax, ymax)` | Row-level range predicate | No |
+| `lilis_in_distance(x, y, qx, qy, distance)` | Row-level distance predicate | No |
+| `lilis_distance(x, y, qx, qy)` | Euclidean distance expression | No |
+| `lilis_is_point(x, y, qx, qy)` | Row-level exact point predicate | No |
+
+Example:
+
+```sql
+SELECT *
+FROM points
+WHERE lilis_in_range(x, y, -87.70, 41.82, -87.64, 41.86);
+```
+
+#### Build an Indexed DataFrame
+
+```java
+Dataset<Row> points = LiLIS.loadCSV(spark, "hdfs:///lilis/data/points.csv");
+IndexedSpatialRDD index = LiLIS.createIndex(spark, points, "QuadTree");
+
+Dataset<Row> rangeResult = LiLIS.rangeQuery(
+        spark, index,
+        -87.70, 41.82,
+        -87.64, 41.86
+);
+rangeResult.show();
+```
+
+Supported indexed DataFrame queries:
+
+| API | Query Type | Return Type |
+|-----|------------|-------------|
+| `LiLIS.rangeQuery(...)` | Range query | `Dataset<Row>` with `x`, `y` |
+| `LiLIS.pointQuery(...)` | Exact point query | `Dataset<Row>` with `x`, `y` |
+| `LiLIS.knnQuery(...)` | KNN query | `Dataset<Row>` with `x`, `y` |
+| `LiLIS.distanceQuery(...)` | Distance query | `Dataset<Row>` with `x`, `y` |
+| `LiLIS.spatialJoin(...)` | Polygon envelope join | `Dataset<Row>` with `polygon_id`, `x`, `y` |
+
+#### Register an Indexed SQL View
+
+`createIndexAsView` builds and caches the LiLIS index, registers it in the in-memory index registry, and creates two temporary views:
+
+- `<viewName>`: the original DataFrame view
+- `<viewName>_lilis`: a DataSource V2 indexed view backed by LiLIS
+
+```java
+Dataset<Row> points = LiLIS.loadCSV(spark, "hdfs:///lilis/data/points.csv");
+LiLIS.createIndexAsView(spark, points, "points", "QuadTree");
+```
+
+Then query the indexed view directly with Spark SQL:
+
+```sql
+SELECT *
+FROM points_lilis
+WHERE x >= -87.70 AND x <= -87.64
+  AND y >= 41.82 AND y <= 41.86;
+```
+
+For complete `x`/`y` range predicates, the DataSource V2 scan parses the pushed filters and uses `RangeQuery.SpatialRangeQuery(...)` over the registered LiLIS index.
+
+#### Manual DataSource V2 View
+
+You can also create an indexed SQL view manually after registering an index name:
+
+```sql
+CREATE OR REPLACE TEMPORARY VIEW indexed_points
+USING lilis
+OPTIONS (index_name 'points');
+
+SELECT *
+FROM indexed_points
+WHERE x > -87.70 AND x < -87.64
+  AND y > 41.82 AND y < 41.86;
+```
+
+#### Indexed Query Results as SQL Views
+
+For non-range query types that do not map naturally to Spark SQL filter pushdown, create a result view programmatically and continue querying it with SQL:
+
+```java
+LiLIS.knnQueryAsView(spark, "points", "knn_result", -87.65, 41.85, 10);
+spark.sql("SELECT * FROM knn_result").show();
+
+LiLIS.distanceQueryAsView(spark, "points", "distance_result", -87.65, 41.85, 0.1);
+spark.sql("SELECT * FROM distance_result").show();
+```
+
+Available helpers:
+
+| Helper | Query Type |
+|--------|------------|
+| `LiLIS.rangeQueryAsView(...)` | Range query |
+| `LiLIS.pointQueryAsView(...)` | Point query |
+| `LiLIS.knnQueryAsView(...)` | KNN query |
+| `LiLIS.distanceQueryAsView(...)` | Distance query |
+
 ### Available Entry Classes
 
 | Class | Description |
@@ -139,6 +257,7 @@ learned-index-spark/
 │   ├── index/              # Index building logic
 │   ├── partitions/         # 5 spatial partition strategies
 │   ├── query/              # Range, Point, KNN, Distance, Join queries
+│   ├── sql/                # Spark SQL/DataFrame API, UDFs, DataSource V2 indexed views
 │   ├── spline/             # Spline index (CDF + Radix acceleration)
 │   └── utils/              # HDFSPointReader, utilities
 ├── deploy/

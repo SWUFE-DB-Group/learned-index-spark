@@ -3,7 +3,6 @@ package innerPartition;
 
 import datatypes.Point;
 import org.apache.sedona.core.joinJudgement.DedupParams;
-import org.apache.sedona.core.spatialPartitioning.quadtree.QuadTreePartitioner;
 import org.apache.sedona.core.utils.HalfOpenRectangle;
 import org.locationtech.jts.geom.Envelope;
 import quadtree.QuadRectangle;
@@ -41,7 +40,7 @@ public class QuadPartition extends spatialPartitioner {
     @Override
     public Iterator<Tuple2<Integer, Point>> placeObject(Point spatialObject) throws Exception {
         Envelope envelope = spatialObject.getEnvelopeInternal();
-        List<org.apache.sedona.core.spatialPartitioning.quadtree.QuadRectangle> matchedPartitions = this.quadTree.findZones(new QuadRectangle(envelope));
+        List<QuadRectangle> matchedPartitions = this.quadTree.findZones(new QuadRectangle(envelope));
         Point point = spatialObject instanceof Point ? spatialObject : null;
         Set<Tuple2<Integer, Point>> result = new HashSet();
         Iterator var6 = matchedPartitions.iterator();
@@ -72,7 +71,7 @@ public class QuadPartition extends spatialPartitioner {
     }
 
     public boolean equals(Object o) {
-        if (o != null && o instanceof QuadTreePartitioner) {
+        if (o != null && o instanceof QuadPartition) {
             QuadPartition other = (QuadPartition)o;
             return other.quadTree.equals(this.quadTree);
         } else {
