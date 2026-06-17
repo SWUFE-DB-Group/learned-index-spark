@@ -1,0 +1,32 @@
+======================================================================
+QUERY BENCHMARK COMPARISON — nyc_full
+LiLIS runs=50  |  NoIndex runs=10  |  kNN k=10
+Query points: 50 random via takeSample(seed=42)
+Mode: SEQUENTIAL — no memory contention
+======================================================================
+
+Query Type                   Avg(ms)    Min(ms)    Max(ms)    Std(ms)
+----------------------------------------------------------------------
+Point  LiLIS-K                1116.2        826       3536      483.4
+Point  No-index               9827.5       6439      13187     2250.7
+
+Range  LiLIS-K                1177.0        795       3763      527.3
+Range  No-index               9764.0       6262      12129     1839.1
+
+kNN    LiLIS-K                1114.5        849       3124      310.8
+kNN    No-index              11305.0       6454      13524     2401.1
+
+======================================================================
+SPEEDUP — No-index / LiLIS-K
+----------------------------------------------------------------------
+  Point query : 8.8x faster
+  Range query : 8.3x faster
+  kNN   query : 10.1x faster
+
+======================================================================
+Paper reference (Section V.B Table III, NYC):
+  Takeaway 1: LiLIS nhanh hơn 2-3 orders of magnitude vs Sedona
+  LiLIS-K absolute (paper cluster):
+    Point :  82.59 ms
+    Range : 468.64 ms
+    kNN   : 650.20 ms

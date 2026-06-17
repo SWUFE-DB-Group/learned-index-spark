@@ -1,0 +1,21 @@
+==================================================
+BENCHMARK SUMMARY — nyc_full
+==================================================
+Total runs attempted : 10
+Skipped/Failed runs  : 0
+Valid runs counted   : 10
+
+Variant         Min(ms)    Max(ms)    Avg(ms)    StdDev     Runs
+-----------------------------------------------------------------
+LiLIS-Q         42150      55126      46516      3996       10
+LiLIS-K         48665      74934      60202      8854       10  (paper: ~50s)
+LiLIS-R         43486      58548      51207      4061       10
+LiLIS-F         40305      110434     58074      20779      10
+LiLIS-A         39869      67911      49881      9700       10
+
+Thứ tự tốc độ (theo trung bình, nhanh → chậm):
+  1. LiLIS-Q: 46,516ms
+  2. LiLIS-A: 49,881ms
+  3. LiLIS-R: 51,207ms
+  4. LiLIS-F: 58,074ms
+  5. LiLIS-K: 60,202ms

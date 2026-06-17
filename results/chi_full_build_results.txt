@@ -1,0 +1,10 @@
+--------------------------------------chi_fullbuild QPIndexBuild:
+Index build time : 8896
+--------------------------------------chi_fullbuild KPIndexBuild:
+Index build time : 7607
+--------------------------------------chi_fullbuild RPIndexBuild:
+Index build time : 4771
+--------------------------------------chi_fullbuild FPIndexBuild:
+Index build time : 3236
+--------------------------------------chi_fullbuild APIndexBuild:
+Index build time : 3532

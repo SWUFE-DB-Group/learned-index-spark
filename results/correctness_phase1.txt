@@ -1,0 +1,9 @@
+phase: phase1
+status: PASS
+test_suites: SplineBuildTest, PointQueryParityTest, RangeQueryParityTest, KNNQueryParityTest
+tests_run: 12
+failures: 0
+errors: 0
+skipped: 0
+datasets: smoke_points.csv, edge_points.csv, syn_subset.csv
+notes: fallback and learned-index paths both verified

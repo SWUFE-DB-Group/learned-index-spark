@@ -14,6 +14,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class KPIndexBuild {
+    public static void main(String[] args) throws Exception { KPIndexBuild(args); }
+
     public static void KPIndexBuild(String[] args) throws Exception {
 
 
@@ -34,7 +36,7 @@ public class KPIndexBuild {
 
 
 
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(  "/home/hwj/result.txt",true))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("results/" + args[0] + "_build_results.txt", true))) {
             writer.write("--------------------------------------");
             writer.write(args[0]);
             writer.write("build KPIndexBuild:"+"\n");

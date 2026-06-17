@@ -34,7 +34,7 @@ public class RPIndexBuild {
 
 
 
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(  "/home/hwj/result.txt",true))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("results/" + args[0] + "_build_results.txt", true))) {
             writer.write("--------------------------------------");
             writer.write(args[0]);
             writer.write("build RPIndexBuild:"+"\n");
